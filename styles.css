@@ -158,30 +158,11 @@ h3 {
   margin: 0;
 }
 
-.numbers,
 .feature-list,
 .contact-list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.numbers {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.numbers li {
-  padding: 1.2rem 1rem;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  text-align: center;
-}
-
-.numbers strong {
-  display: block;
-  font-size: 1.8rem;
 }
 
 .feature-list {
@@ -274,7 +255,6 @@ h3 {
 }
 
 @media (max-width: 720px) {
-  .numbers,
   .feature-list,
   .card {
     grid-template-columns: 1fr;
