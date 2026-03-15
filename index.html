@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기록으로 설득하는 포트폴리오</title>
+    <meta
+      name="description"
+      content="3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주. 긴 호흡으로 끝까지 완성하는 사람의 포트폴리오."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="sidebar__inner">
+          <a class="brand" href="#hero">
+            <span class="brand__badge">PB</span>
+            <div>
+              <strong id="brand-name">MINJI</strong>
+              <p id="brand-role">Endurance Portfolio Draft</p>
+            </div>
+          </a>
+
+          <nav class="nav">
+            <a href="#hero" class="nav__link is-active">Intro</a>
+            <a href="#proof" class="nav__link">Proof</a>
+            <a href="#journey" class="nav__link">Journey</a>
+            <a href="#projects" class="nav__link">Repos</a>
+            <a href="#mindset" class="nav__link">Mindset</a>
+            <a href="#contact" class="nav__link">Contact</a>
+          </nav>
+
+          <div class="sidebar__foot">
+            <p class="eyebrow">Catchphrase</p>
+            <p id="sidebar-quote" class="sidebar__quote">
+              기록으로 설득하고, 끝까지 완성한다.
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="hero" class="section section--hero">
+          <div class="hero__backdrop"></div>
+          <p class="eyebrow">Portfolio Main Page</p>
+          <h1 id="hero-title">
+            지구력으로 설계하고,<br />
+            결과로 증명하는 사람.
+          </h1>
+          <p id="hero-copy" class="hero__copy">
+            3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주. 긴 호흡으로
+            꾸준히 밀어붙여 결국 결과를 만드는 타입입니다. 제품과 프로젝트도
+            같은 방식으로 끝까지 가져갑니다.
+          </p>
+
+          <div class="hero__actions">
+            <a id="primary-link" class="button button--primary" href="#projects">
+              대표 레포 보기
+            </a>
+            <a id="secondary-link" class="button button--ghost" href="#contact">
+              연락하기
+            </a>
+          </div>
+
+          <div id="hero-stats" class="stats-grid" aria-label="핵심 기록"></div>
+        </section>
+
+        <section id="proof" class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Proof of Work</p>
+            <h2>숫자와 완주 기록으로 설명되는 실행력</h2>
+          </div>
+
+          <div id="proof-cards" class="proof-grid"></div>
+        </section>
+
+        <section id="journey" class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Athletic Resume</p>
+            <h2>운동 이력을 한눈에 보여주는 타임라인</h2>
+            <p>
+              레퍼런스 repo의 `Overall Experiences` 섹션처럼, 당신을 설명하는
+              이벤트를 시간축으로 압축한 영역입니다.
+            </p>
+          </div>
+
+          <div id="journey-list" class="journey-list"></div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Repositories</p>
+            <h2>포트폴리오에 실을 대표 레포 구조</h2>
+            <p>
+              지금은 초안이라 카드만 채워두었습니다. `script.js` 상단 데이터에
+              GitHub 링크와 설명을 넣으면 바로 교체됩니다.
+            </p>
+          </div>
+
+          <div id="project-list" class="project-list"></div>
+        </section>
+
+        <section id="mindset" class="section section--split">
+          <div>
+            <p class="eyebrow">Mindset</p>
+            <h2>운동에서 만든 태도를 작업 방식으로 옮깁니다</h2>
+          </div>
+
+          <div id="mindset-list" class="mindset-list"></div>
+        </section>
+
+        <section id="contact" class="section section--contact">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">함께 오래 가는 프로젝트를 찾고 있습니다.</h2>
+            <p id="contact-copy">
+              이름, GitHub, 이메일만 바꾸면 이 페이지를 바로 개인 메인 포트폴리오로
+              사용할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <a id="contact-github" class="contact-card__item" href="#">
+              <span>GitHub</span>
+              <strong>github.com/minji0828</strong>
+            </a>
+            <a id="contact-email" class="contact-card__item" href="mailto:contact@example.com">
+              <span>Email</span>
+              <strong>contact@example.com</strong>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
