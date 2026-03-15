@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MINJI Portfolio</title>
+    <title>MINJI</title>
     <meta
       name="description"
-      content="3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주를 기록으로 쌓아온 MINJI의 포트폴리오 메인 페이지."
+      content="3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주를 기록으로 쌓아온 MINJI의 메인 포트폴리오."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,210 +17,159 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section id="header">
-      <header class="header-block">
+    <aside id="header">
+      <div class="header-inner">
         <img
           class="avatar"
           src="https://avatars.githubusercontent.com/u/232530711?v=4"
-          alt="MINJI GitHub avatar"
+          alt="MINJI avatar"
         />
-        <h1 id="logo"><a href="#one">MINJI</a></h1>
-        <p class="header-role">꾸준함으로 밀어붙이는 빌더</p>
-      </header>
+        <h1><a href="#intro">MINJI</a></h1>
+        <p class="subtitle">꾸준함으로 끝까지 가는 사람</p>
 
-      <nav id="nav">
-        <ul>
-          <li><a href="#one" class="active">Introduction</a></li>
-          <li><a href="#two">Strength</a></li>
-          <li><a href="#three">Portfolio</a></li>
-          <li><a href="#four">Journey</a></li>
-          <li><a href="#five">Contact</a></li>
-        </ul>
-      </nav>
+        <nav>
+          <a href="#intro" class="active">Intro</a>
+          <a href="#strength">Strength</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <footer class="header-footer">
-        <p class="header-quote">기록으로 설득하고, 끝까지 완성한다.</p>
-      </footer>
-    </section>
+        <p class="quote">기록으로 설득하고, 끝까지 완성한다.</p>
+      </div>
+    </aside>
 
-    <div id="wrapper">
-      <main id="main">
-        <section id="one">
-          <div class="container">
-            <header class="major">
-              <span class="section-label">Introduction</span>
-              <h2>3대 700, 국토종주 3회.</h2>
-              <p>
-                자전거 대회와 듀애슬론까지 직접 몸으로 부딪히며 끝까지 완주해온
-                사람입니다. 프로젝트도 같은 방식으로 접근합니다. 긴 호흡으로
-                밀어붙이고, 기록을 남기고, 결과로 증명합니다.
-              </p>
-            </header>
+    <main id="main">
+      <section id="intro">
+        <div class="container">
+          <p class="eyebrow">Introduction</p>
+          <h2>3대 700, 국토종주 3회.</h2>
+          <p class="lead">
+            자전거 대회와 듀애슬론까지 직접 완주해오며 쌓은 지구력으로 일합니다.
+            한 번 강하게가 아니라 오래 밀어붙이는 쪽에 가깝고, 중간 포기보다
+            완주를 더 중요하게 봅니다.
+          </p>
 
-            <div class="intro-banner">
-              <strong>Catchphrase</strong>
-              <p>꾸준함은 성격이 아니라 성과를 만드는 시스템이라고 믿습니다.</p>
-            </div>
-
-            <ul class="stats">
-              <li>
-                <strong>700kg</strong>
-                <span>3대 합계</span>
-              </li>
-              <li>
-                <strong>3회</strong>
-                <span>국토종주</span>
-              </li>
-              <li>
-                <strong>2종</strong>
-                <span>대회 카테고리</span>
-              </li>
-              <li>
-                <strong>100%</strong>
-                <span>완주 집요함</span>
-              </li>
-            </ul>
+          <div class="highlight-box">
+            <strong>Catchphrase</strong>
+            <p>꾸준함은 기질이 아니라 결과를 만드는 시스템이라고 믿습니다.</p>
           </div>
-        </section>
 
-        <section id="two">
-          <div class="container">
-            <h3>Strength</h3>
-            <p>운동 기록에서 드러나는 방식 그대로 일합니다.</p>
-            <ul class="feature-icons">
-              <li>고강도 루틴을 오래 가져가는 지속성</li>
-              <li>장거리 일정과 변수에 대응하는 페이스 조절</li>
-              <li>훈련보다 실전 검증을 중시하는 실행력</li>
-              <li>반복 기록을 남기고 다음 루프를 개선하는 습관</li>
-              <li>한 번보다 여러 번 완주로 증명하는 신뢰감</li>
-              <li>새 환경에도 리듬을 다시 맞추는 적응력</li>
-            </ul>
+          <ul class="numbers">
+            <li>
+              <strong>700kg</strong>
+              <span>3대 합계</span>
+            </li>
+            <li>
+              <strong>3회</strong>
+              <span>국토종주</span>
+            </li>
+            <li>
+              <strong>2종</strong>
+              <span>실전 레이스</span>
+            </li>
+            <li>
+              <strong>100%</strong>
+              <span>완주 집요함</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-            <div class="split-grid">
-              <article class="panel">
-                <h4>내가 잘하는 방식</h4>
+      <section id="strength">
+        <div class="container">
+          <h3>Strength</h3>
+          <p>운동 기록에서 드러나는 방식 그대로 프로젝트를 다룹니다.</p>
+
+          <ul class="feature-list">
+            <li>고강도 루틴을 오래 유지하는 지속성</li>
+            <li>긴 일정과 변수에 대응하는 페이스 조절</li>
+            <li>준비만 하지 않고 실전에서 검증하는 실행력</li>
+            <li>반복 기록을 남기고 다음 루프를 개선하는 습관</li>
+            <li>한 번보다 여러 번 완주로 신뢰를 쌓는 태도</li>
+            <li>새 환경에도 리듬을 다시 맞추는 적응력</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="container">
+          <h3>Portfolio</h3>
+          <div class="card-list">
+            <article class="card">
+              <div class="thumb">Bike Community</div>
+              <div>
+                <h4>bike-community</h4>
                 <p>
-                  기준을 세우고, 루틴으로 쌓고, 중간 포기 대신 완주를 우선합니다.
-                  운동에서 배운 이 패턴이 프로젝트 운영 방식의 기본입니다.
+                  라이딩 코스, 모임, 채팅, 기록까지 이어지는 자전거 커뮤니티
+                  프로젝트입니다. 공개 저장소 중 가장 주제가 선명한 대표 작업물로
+                  두었습니다.
                 </p>
-              </article>
-              <article class="panel">
-                <h4>왜 이 기록을 앞에 두는가</h4>
+                <a href="https://github.com/minji0828/bike-community">
+                  github.com/minji0828/bike-community
+                </a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="thumb">Portfolio</div>
+              <div>
+                <h4>minji-pop</h4>
                 <p>
-                  말로 설명하는 성실함보다, 반복된 결과가 더 설득력이 있다고
-                  보기 때문입니다. 이 페이지는 그 증거를 먼저 보여주는 구조입니다.
+                  지금 보고 있는 메인 페이지 저장소입니다. 개인 기록과 저장소를
+                  한 장에 정리하는 용도로 사용합니다.
                 </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="three">
-          <div class="container">
-            <h3>Portfolio</h3>
-            <div class="features">
-              <article>
-                <a
-                  href="https://github.com/minji0828/bike-community"
-                  class="image image-placeholder"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span>Bike Community</span>
+                <a href="https://github.com/minji0828/minji-pop">
+                  github.com/minji0828/minji-pop
                 </a>
-                <div class="inner">
-                  <h4>BikeOasis / bike-community</h4>
-                  <p>
-                    라이딩 코스, 모임, 실시간 채팅, 기록까지 이어지는 자전거
-                    커뮤니티 프로젝트입니다. 지금 공개된 저장소 중 가장 방향성이
-                    분명한 대표 작업물입니다.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <a
-                  href="https://github.com/minji0828/minji-pop"
-                  class="image image-placeholder"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span>Portfolio Page</span>
-                </a>
-                <div class="inner">
-                  <h4>minji-pop</h4>
-                  <p>
-                    지금 보고 있는 개인 메인 페이지 저장소입니다. 운동 기록을
-                    개인 브랜딩 언어로 정리하고, GitHub Pages로 바로 배포되는
-                    정적 포트폴리오로 구성했습니다.
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <a
-                  href="https://github.com/minji0828"
-                  class="image image-placeholder"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span>GitHub Profile</span>
-                </a>
-                <div class="inner">
-                  <h4>GitHub Archive</h4>
-                  <p>
-                    아직 공개 저장소가 많지는 않지만, 이후 프로젝트가 늘어나면
-                    이 영역에 그대로 확장할 수 있게 구조를 열어두었습니다.
-                  </p>
-                </div>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="four">
-          <div class="container">
-            <h3>Journey</h3>
-            <div class="timeline">
-              <article class="timeline-item">
-                <strong>3대 700 달성</strong>
-                <p>루틴을 길게 가져가며 기준치를 높인 경험.</p>
-              </article>
-              <article class="timeline-item">
-                <strong>국토종주 3회</strong>
-                <p>장거리 완주를 여러 번 반복하며 체력과 멘탈을 검증.</p>
-              </article>
-              <article class="timeline-item">
-                <strong>자전거 대회 참가</strong>
-                <p>훈련을 기록에만 남기지 않고 실전에서 확인.</p>
-              </article>
-              <article class="timeline-item">
-                <strong>듀애슬론 참가</strong>
-                <p>환경과 종목이 바뀌어도 리듬을 맞춰 끝까지 완주.</p>
-              </article>
-            </div>
+      <section id="journey">
+        <div class="container">
+          <h3>Journey</h3>
+          <div class="journey-list">
+            <article>
+              <strong>3대 700 달성</strong>
+              <p>루틴을 오래 유지하며 기준치를 높인 경험.</p>
+            </article>
+            <article>
+              <strong>국토종주 3회</strong>
+              <p>장거리 완주를 여러 번 반복하며 체력과 멘탈을 검증.</p>
+            </article>
+            <article>
+              <strong>자전거 대회 참가</strong>
+              <p>훈련을 기록에만 남기지 않고 실전에서 확인.</p>
+            </article>
+            <article>
+              <strong>듀애슬론 참가</strong>
+              <p>환경이 바뀌어도 다시 리듬을 맞춰 끝까지 완주.</p>
+            </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="five">
-          <div class="container">
-            <h3>Contact</h3>
-            <ul class="contact-list">
-              <li>
-                GitHub :
-                <a href="https://github.com/minji0828">https://github.com/minji0828</a>
-              </li>
-              <li>
-                Live :
-                <a href="https://minji0828.github.io/minji-pop/">
-                  https://minji0828.github.io/minji-pop/
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </main>
-    </div>
+      <section id="contact">
+        <div class="container">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li>
+              GitHub :
+              <a href="https://github.com/minji0828">https://github.com/minji0828</a>
+            </li>
+            <li>
+              Live :
+              <a href="https://minji0828.github.io/minji-pop/">
+                https://minji0828.github.io/minji-pop/
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>

@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll("#main section[id]");
-const navLinks = document.querySelectorAll("#nav a");
+const navLinks = document.querySelectorAll("#header nav a");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -8,10 +8,10 @@ const observer = new IntersectionObserver(
         return;
       }
 
-      const id = `#${entry.target.id}`;
+      const current = `#${entry.target.id}`;
 
       navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === id);
+        link.classList.toggle("active", link.getAttribute("href") === current);
       });
     });
   },
