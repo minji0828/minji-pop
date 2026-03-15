@@ -1,17 +1,21 @@
 const portfolioData = {
   profile: {
     name: "MINJI",
-    role: "운동으로 단련된 빌더",
+    role: "라이딩과 완주로 단련된 빌더",
     catchphrase: "기록으로 설득하고, 끝까지 완성한다.",
     heroTitle: "지구력으로 설계하고,\n결과로 증명하는 사람.",
     heroCopy:
-      "3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주. 긴 호흡으로 꾸준히 밀어붙여 결국 결과를 만드는 타입입니다. 제품과 프로젝트도 같은 방식으로 끝까지 가져갑니다.",
-    contactTitle: "함께 오래 가는 프로젝트를 찾고 있습니다.",
+      "3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주. 훈련과 기록으로 쌓은 지구력을 제품 만들기에도 그대로 가져옵니다. 오래 가는 문제를 꾸준히 밀어붙여 끝내 결과로 만드는 쪽에 가깝습니다.",
+    contactTitle: "라이딩처럼 긴 호흡의 프로젝트를 만들고 있습니다.",
     contactCopy:
-      "이 초안은 한 장짜리 메인 포트폴리오용으로 설계했습니다. 이름, GitHub, 이메일, 대표 레포만 바꾸면 바로 개인 브랜딩 페이지로 사용할 수 있습니다.",
+      "지금 페이지는 `minji-pop` 자체를 포트폴리오 메인으로 쓰는 구성입니다. 공개 저장소와 GitHub 프로필 기준으로 대표 섹션을 정리해두었습니다.",
+    profileUrl: "https://github.com/minji0828",
+    profileHandle: "@minji0828",
+    avatarUrl: "https://avatars.githubusercontent.com/u/232530711?v=4",
     githubUrl: "https://github.com/minji0828",
     githubLabel: "github.com/minji0828",
-    email: "contact@example.com",
+    siteUrl: "https://minji0828.github.io/minji-pop/",
+    siteLabel: "minji0828.github.io/minji-pop",
   },
   stats: [
     { value: "700", label: "3대 합계", suffix: "kg" },
@@ -67,31 +71,31 @@ const portfolioData = {
   ],
   projects: [
     {
-      label: "대표 레포 01",
-      title: "프로젝트 이름을 넣는 자리",
+      label: "Featured Repo",
+      title: "BikeOasis / bike-community",
       description:
-        "이 카드에 실제 GitHub 레포 링크와 한 줄 문제 정의, 핵심 성과를 적으면 메인 포트폴리오 섹션으로 바로 쓸 수 있습니다.",
-      stack: ["Next.js", "TypeScript", "PostgreSQL"],
-      url: "https://github.com/minji0828/minji-pop",
-      linkText: "GitHub 열기",
+        "여행형 라이딩 코스, 모임, 실시간 채팅, 라이딩 기록까지 이어지는 자전거 커뮤니티 프로젝트입니다. 지금 공개된 저장소 중 가장 분명한 주제와 방향성을 가진 메인 작업물입니다.",
+      stack: ["Next.js", "TypeScript", "Spring Boot"],
+      url: "https://github.com/minji0828/bike-community",
+      linkText: "bike-community 보기",
     },
     {
-      label: "대표 레포 02",
-      title: "성장 서사를 보여줄 프로젝트",
+      label: "This Portfolio",
+      title: "minji-pop",
       description:
-        "운영 경험, 트래픽 처리, 데이터 모델링, 자동화 등 당신 강점이 가장 잘 드러나는 프로젝트를 배치하는 용도입니다.",
-      stack: ["React", "Node.js", "AWS"],
+        "지금 보고 있는 메인 랜딩 페이지 저장소입니다. 운동 기록을 개인 브랜딩 언어로 바꾸고, GitHub Pages에서 바로 배포 가능한 정적 포트폴리오로 구성했습니다.",
+      stack: ["HTML", "CSS", "JavaScript"],
       url: "https://github.com/minji0828/minji-pop",
-      linkText: "프로젝트 보기",
+      linkText: "minji-pop 보기",
     },
     {
-      label: "대표 레포 03",
-      title: "완성도를 보여줄 프로젝트",
+      label: "Profile",
+      title: "GitHub Profile",
       description:
-        "작아도 좋지만 완성도가 높아야 합니다. README, 데모, 구조 설명까지 갖춘 저장소 하나가 전체 인상을 끌어올립니다.",
-      stack: ["Spring", "Docker", "CI/CD"],
-      url: "https://github.com/minji0828/minji-pop",
-      linkText: "상세 확인",
+        "공개 저장소가 아직 많지 않은 단계라서 세 번째 카드에는 프로필 전체를 연결했습니다. 이후 새 공개 프로젝트가 생기면 이 자리를 바로 교체하면 됩니다.",
+      stack: ["GitHub", "Portfolio", "Archive"],
+      url: "https://github.com/minji0828",
+      linkText: "프로필 열기",
     },
   ],
   mindset: [
@@ -117,6 +121,8 @@ const textWithBreaks = (value) => value.replaceAll("\n", "<br />");
 
 const brandName = document.querySelector("#brand-name");
 const brandRole = document.querySelector("#brand-role");
+const profileLink = document.querySelector("#profile-link");
+const profileAvatar = document.querySelector("#profile-avatar");
 const sidebarQuote = document.querySelector("#sidebar-quote");
 const heroTitle = document.querySelector("#hero-title");
 const heroCopy = document.querySelector("#hero-copy");
@@ -125,10 +131,13 @@ const contactCopy = document.querySelector("#contact-copy");
 const primaryLink = document.querySelector("#primary-link");
 const secondaryLink = document.querySelector("#secondary-link");
 const contactGithub = document.querySelector("#contact-github");
-const contactEmail = document.querySelector("#contact-email");
+const contactSite = document.querySelector("#contact-site");
 
 brandName.textContent = portfolioData.profile.name;
 brandRole.textContent = portfolioData.profile.role;
+profileLink.href = portfolioData.profile.profileUrl;
+profileLink.querySelector("strong").textContent = portfolioData.profile.profileHandle;
+profileAvatar.src = portfolioData.profile.avatarUrl;
 sidebarQuote.textContent = portfolioData.profile.catchphrase;
 heroTitle.innerHTML = textWithBreaks(portfolioData.profile.heroTitle);
 heroCopy.textContent = portfolioData.profile.heroCopy;
@@ -138,8 +147,8 @@ primaryLink.href = "#projects";
 secondaryLink.href = "#contact";
 contactGithub.href = portfolioData.profile.githubUrl;
 contactGithub.querySelector("strong").textContent = portfolioData.profile.githubLabel;
-contactEmail.href = `mailto:${portfolioData.profile.email}`;
-contactEmail.querySelector("strong").textContent = portfolioData.profile.email;
+contactSite.href = portfolioData.profile.siteUrl;
+contactSite.querySelector("strong").textContent = portfolioData.profile.siteLabel;
 
 const heroStats = document.querySelector("#hero-stats");
 const proofCards = document.querySelector("#proof-cards");

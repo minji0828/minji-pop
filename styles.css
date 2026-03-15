@@ -103,6 +103,34 @@ a,
   gap: 16px;
 }
 
+.profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+}
+
+.profile-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.profile-chip p {
+  margin: 4px 0 0;
+  color: rgba(248, 243, 236, 0.62);
+  font-size: 0.92rem;
+}
+
+.profile-chip__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 .brand__badge {
   display: grid;
   place-items: center;
