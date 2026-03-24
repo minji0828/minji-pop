@@ -26,6 +26,8 @@ sections.forEach((section) => {
 });
 
 const toggleCards = document.querySelectorAll("[data-toggle-card]");
+const sharedPanel = document.querySelector("#shortudy-detail");
+const sharedIframe = sharedPanel?.querySelector("iframe");
 
 const syncIframeHeight = (iframe) => {
   if (!iframe) {
@@ -49,31 +51,30 @@ const syncIframeHeight = (iframe) => {
   }
 };
 
+if (sharedIframe) {
+  sharedIframe.addEventListener("load", () => {
+    syncIframeHeight(sharedIframe);
+  });
+}
+
 toggleCards.forEach((card) => {
   const button = card.querySelector(".card-toggle-button");
-  const panel = card.querySelector(".card-expand");
   const indicator = card.querySelector(".toggle-indicator");
-  const iframe = card.querySelector("iframe");
 
-  if (!button || !panel || !indicator) {
+  if (!button || !sharedPanel || !indicator) {
     return;
-  }
-
-  if (iframe) {
-    iframe.addEventListener("load", () => {
-      syncIframeHeight(iframe);
-    });
   }
 
   button.addEventListener("click", () => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
     button.setAttribute("aria-expanded", String(!isExpanded));
-    panel.hidden = isExpanded;
+    sharedPanel.hidden = isExpanded;
     indicator.textContent = isExpanded ? "열기" : "닫기";
 
-    if (!isExpanded && iframe) {
+    if (!isExpanded && sharedIframe) {
       requestAnimationFrame(() => {
-        syncIframeHeight(iframe);
+        syncIframeHeight(sharedIframe);
+        sharedPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
   });

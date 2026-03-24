@@ -209,7 +209,6 @@ h3 {
 
 .card-toggle {
   grid-template-columns: 1fr;
-  gap: 0.9rem;
 }
 
 .card-toggle-button {
@@ -252,8 +251,13 @@ h3 {
 
 .card-expand {
   padding: 1.2rem;
+  margin-top: 1.4rem;
   background: var(--panel);
   border: 1px solid var(--line);
+}
+
+.card-expand-wide {
+  width: 100%;
 }
 
 .portfolio-embed {
