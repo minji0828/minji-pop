@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" role="img" aria-labelledby="title">
+  <title>Shortudy logo</title>
+  <rect width="560" height="150" fill="white"/>
+  <text
+    x="24"
+    y="104"
+    fill="#09cf66"
+    font-family="'Noto Sans KR', 'Arial', sans-serif"
+    font-size="88"
+    font-weight="800"
+    letter-spacing="-4"
+  >ShorTudy</text>
+</svg>
