@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MINJI</title>
+    <title>지민수 | Backend Developer Portfolio</title>
     <meta
       name="description"
-      content="3대 700, 국토종주 3회, 자전거 대회와 듀애슬론 완주를 기록으로 쌓아온 MINJI의 메인 포트폴리오."
+      content="지민수의 백엔드 포트폴리오. GAJA, Shortudy, AI-STUDY를 중심으로 조회 로직, 인증 구조, 운영 기준을 정리했습니다."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,10 +22,10 @@
         <img
           class="avatar"
           src="https://avatars.githubusercontent.com/u/232530711?v=4"
-          alt="MINJI avatar"
+          alt="지민수 avatar"
         />
-        <h1><a href="#intro">MINJI</a></h1>
-        <p class="subtitle">꾸준함으로 끝까지 가는 사람</p>
+        <h1><a href="#intro">지민수</a></h1>
+        <p class="subtitle">Spring Boot 기반 백엔드 개발자</p>
 
         <nav>
           <a href="#intro" class="active">Intro</a>
@@ -35,7 +35,7 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <p class="quote">기록으로 설득하고, 끝까지 완성한다.</p>
+        <p class="quote">문제 정의와 기준 문서화로 설계 이유를 남깁니다.</p>
       </div>
     </aside>
 
@@ -43,18 +43,20 @@
       <section id="intro">
         <div class="container">
           <p class="eyebrow">Introduction</p>
-          <h2>꾸준히 쌓아서 끝까지 만드는 사람.</h2>
+          <h2>문제 정의와 기준 설계에 강한 백엔드 개발자.</h2>
           <p class="lead">
-            한 번 강하게 몰아치는 것보다 오래 밀어붙이는 쪽에 가깝습니다.
-            운동에서는 3대 700과 국토종주 3회 같은 기록으로 그 끈기를 남겼고,
-            지금은 그 태도를 프로젝트에도 그대로 가져오고 있습니다.
+            위치 기반 조회 로직, 인증/보안 흐름, 운영 관측성처럼 서버가 책임져야 하는
+            기준을 프로젝트로 검증해 왔습니다. 이 포트폴리오는 GAJA, Shortudy,
+            AI-STUDY에서 어떤 문제를 정의했고 어떤 구조로 풀었는지를 보여주기 위해
+            정리했습니다.
           </p>
 
           <div class="highlight-box">
-            <strong>Why I work this way</strong>
+            <strong>Core Focus</strong>
             <p>
-              중간 포기보다 완주를 더 중요하게 봅니다. 운동에서 증명한 끈기를,
-              작업에서도 같은 방식으로 쓰려고 합니다.
+              기능을 많이 붙이는 것보다, 현재 문제에 맞는 기준과 데이터 흐름을 먼저
+              정리하는 편입니다. 구현한 기능이 왜 그 구조여야 했는지 문서와 사례로
+              설명하는 데 집중했습니다.
             </p>
           </div>
         </div>
@@ -62,19 +64,19 @@
 
       <section id="strength">
         <div class="container">
-          <h3>Strength</h3>
+          <h3>How I Work</h3>
           <p>
-            꾸준함과 실행력이 가장 큰 강점입니다. 막히면 다른 방법을 찾고,
-            기록을 정리하면서 결국 끝까지 가져가는 쪽에 가깝습니다.
+            프로젝트에서는 기능 추가보다 문제 정의, 조회 경로, 인증 흐름, 운영 기준을
+            먼저 정리하는 편입니다.
           </p>
 
           <ul class="feature-list">
-            <li>한 번 시작한 일은 루틴으로 만들고 꾸준히 밀어붙입니다.</li>
-            <li>막히면 멈추기보다 다른 방법을 찾아서 끝내는 편입니다.</li>
-            <li>준비만 길게 하지 않고 실제 결과로 빠르게 검증합니다.</li>
-            <li>작업 기록을 남기고 다음 시도에서 바로 개선합니다.</li>
-            <li>끈질기게 붙어서 결국 마무리하는 편이라는 말을 자주 듣습니다.</li>
-            <li>긴 호흡이 필요한 일일수록 안정적으로 페이스를 유지합니다.</li>
+            <li>요구사항과 상태 기준을 먼저 문서와 ADR로 정리합니다.</li>
+            <li>조회 경로와 데이터 흐름을 나눠 병목 지점을 확인합니다.</li>
+            <li>인증과 상태 전이처럼 기준이 필요한 영역을 먼저 고정합니다.</li>
+            <li>문서와 테스트로 구현 계약을 맞추는 편입니다.</li>
+            <li>도입 기술보다 현재 조건의 트레이드오프를 우선합니다.</li>
+            <li>구현 후에도 운영 시나리오와 예외 흐름을 다시 점검합니다.</li>
           </ul>
         </div>
       </section>
@@ -82,7 +84,31 @@
       <section id="portfolio">
         <div class="container">
           <h3>Portfolio</h3>
+          <p>
+            이력서에서 요약한 내용을 프로젝트 단위로 더 자세히 정리했습니다. 후킹을
+            위한 숫자보다, 실제로 어떤 문제를 정의하고 어떤 구조를 선택했는지에
+            집중했습니다.
+          </p>
           <div class="card-list">
+            <article class="card">
+              <div class="thumb">GAJA</div>
+              <div class="card-copy">
+                <div class="card-header-line">
+                  <h4>GAJA</h4>
+                  <span class="card-meta">1인 개발</span>
+                </div>
+                <p>
+                  위치 기반 HUD 서비스에서 최근접 코스 탐색, Raw Point/Async Finalization,
+                  JWT RTR, health 분리와 로그 추적을 정리한 프로젝트입니다.
+                </p>
+                <p class="card-help">
+                  조회 로직, 인증 구조, 운영 기준을 어떤 근거로 선택했는지 중심으로
+                  정리했습니다.
+                </p>
+                <span class="card-meta">위치 기반 조회 / 인증 / 운영 관측성</span>
+              </div>
+            </article>
+
             <article class="card card-toggle" data-toggle-card>
               <button
                 class="card-toggle-button"
@@ -103,10 +129,36 @@
                     <span class="toggle-indicator">열기</span>
                   </div>
                   <p>
-                    짧은 학습 영상을 업로드하고 소비하는 숏폼 학습 플랫폼 프로젝트입니다.
+                    업로드 파이프라인, Projection 기반 읽기 모델, Redis write-back,
+                    BackOffice 지표 계산 기준을 정리한 숏폼 학습 플랫폼 프로젝트입니다.
                   </p>
+                  <p class="card-help">
+                    카드를 누르면 세로 포트폴리오가 열리고, 다시 누르면 닫힙니다.
+                  </p>
+                  <span class="card-meta">
+                    업로드 파이프라인 / 읽기 모델 / Redis / 운영 지표
+                  </span>
                 </div>
               </button>
+            </article>
+
+            <article class="card">
+              <div class="thumb">AI-STUDY</div>
+              <div class="card-copy">
+                <div class="card-header-line">
+                  <h4>AI-STUDY</h4>
+                  <span class="card-meta">팀 프로젝트</span>
+                </div>
+                <p>
+                  수업자료 기반 문제 생성과 학습 흐름을 다루는 MVP에서 studentCode 중심
+                  인증 복구와 운영자 승인 플로우를 정리한 프로젝트입니다.
+                </p>
+                <p class="card-help">
+                  문서와 구현이 어긋난 지점을 어떻게 복구했고, 어떤 흐름을 테스트로
+                  고정했는지 중심으로 정리했습니다.
+                </p>
+                <span class="card-meta">MVP / studentCode / 승인 흐름 / 테스트</span>
+              </div>
             </article>
           </div>
 
@@ -118,7 +170,8 @@
                 alt="Shortudy logo"
               />
               <p>
-                아래 이미지를 위에서 아래 순서로 보면 됩니다.
+                숏터디 세로 포트폴리오입니다. 아래 이미지를 위에서 아래로 순서대로
+                확인하면 됩니다.
               </p>
             </div>
             <div class="portfolio-gallery">
@@ -136,19 +189,19 @@
 
       <section id="journey">
         <div class="container">
-          <h3>Work Style</h3>
+          <h3>What I Focus On</h3>
           <div class="journey-list">
             <article>
-              <strong>루틴을 길게 가져갑니다.</strong>
-              <p>짧게 몰아치기보다 오래 유지하면서 기준을 올리는 쪽에 가깝습니다.</p>
+              <strong>기준을 먼저 정리합니다.</strong>
+              <p>요구사항, 상태 전이, 예외 흐름을 먼저 정리한 뒤 구현에 들어갑니다.</p>
             </article>
             <article>
-              <strong>완주를 우선합니다.</strong>
-              <p>중간에 멈추는 것보다 끝까지 가면서 배우는 편이 더 강하다고 봅니다.</p>
+              <strong>읽기/쓰기 경로를 구분합니다.</strong>
+              <p>조회 병목과 데이터 정합성 문제를 같은 방식으로 풀지 않으려고 합니다.</p>
             </article>
             <article>
-              <strong>실전에서 확인합니다.</strong>
-              <p>준비만 길게 하지 않고 실제 결과로 검증하는 흐름을 선호합니다.</p>
+              <strong>운영 시나리오를 확인합니다.</strong>
+              <p>health 분리, 로그 추적, 운영자 흐름처럼 실제 사용 이후를 함께 봅니다.</p>
             </article>
           </div>
         </div>
@@ -158,12 +211,13 @@
         <div class="container">
           <h3>Contact</h3>
           <ul class="contact-list">
+            <li>Email : <a href="mailto:entersuk1998@naver.com">entersuk1998@naver.com</a></li>
             <li>
               GitHub :
               <a href="https://github.com/minji0828">https://github.com/minji0828</a>
             </li>
             <li>
-              Live :
+              Portfolio :
               <a href="https://minji0828.github.io/minji-pop/">
                 https://minji0828.github.io/minji-pop/
               </a>
