@@ -29,10 +29,9 @@ const toggleCards = document.querySelectorAll("[data-toggle-card]");
 const sharedPanel = document.querySelector("#shortudy-detail");
 
 toggleCards.forEach((card) => {
-  const button = card.querySelector(".card-toggle-button");
-  const indicator = card.querySelector(".toggle-indicator");
+  const button = card.querySelector("[data-toggle-button]");
 
-  if (!button || !sharedPanel || !indicator) {
+  if (!button || !sharedPanel) {
     return;
   }
 
@@ -42,8 +41,7 @@ toggleCards.forEach((card) => {
     button.setAttribute("aria-expanded", String(nextExpanded));
     sharedPanel.hidden = isExpanded;
     card.classList.toggle("is-expanded", nextExpanded);
-    button.classList.toggle("is-expanded", nextExpanded);
-    indicator.textContent = nextExpanded ? "미리보기 닫기" : "미리보기 열기";
+    button.textContent = nextExpanded ? "숏터디 미리보기 접기" : "숏터디 미리보기 펼치기";
 
     if (nextExpanded) {
       requestAnimationFrame(() => {
