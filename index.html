@@ -110,11 +110,17 @@
                 </p>
                 <span class="card-meta">위치 기반 조회 / 인증 / 운영 관측성</span>
                 <div class="card-actions">
-                  <a class="card-cta" href="./gaja.html">GAJA 상세 페이지 보기</a>
-                  <span class="card-note">별도 페이지에서 구조, 판단 기준, 운영 기록을 확인할 수 있습니다.</span>
+                  <button class="card-cta" type="button" data-toggle-button aria-expanded="false" aria-controls="gaja-detail">GAJA 미리보기 펼치기</button>
+                  <span class="card-note">카드 아래에서 상세 포트폴리오를 바로 확인할 수 있습니다.</span>
                 </div>
               </div>
             </article>
+            <div class="card-expand card-expand-wide" id="gaja-detail" hidden>
+              <div class="portfolio-panel-topbar">
+                <span class="card-badge">INLINE PREVIEW</span>
+              </div>
+              <iframe class="portfolio-iframe" src="./gaja.html" title="GAJA portfolio detail" loading="lazy"></iframe>
+            </div>
 
             <article class="card card-toggle card-has-inline" data-toggle-card>
                 <div class="thumb thumb-logo">
@@ -148,8 +154,7 @@
                   aria-expanded="false"
                   aria-controls="shortudy-detail"
                 >숏터디 미리보기 펼치기</button>
-                <a class="card-cta" href="./shortudy.html">숏터디 상세 페이지 보기</a>
-                <span class="card-note">페이지 안에서는 요약 미리보기, 별도 페이지에서는 전체 설명을 제공합니다.</span>
+                <span class="card-note">카드 아래에서 상세 포트폴리오를 바로 확인할 수 있습니다.</span>
               </div>
             </article>
 
@@ -173,38 +178,24 @@
                 </p>
                 <span class="card-meta">MVP / school scope / QA 제한 / 역할 분리</span>
                 <div class="card-actions">
-                  <a class="card-cta" href="./ai-study.html">AI-STUDY 상세 페이지 보기</a>
-                  <span class="card-note">별도 페이지에서 역할 분리, school scope, QA 제한 흐름을 확인할 수 있습니다.</span>
+                  <button class="card-cta" type="button" data-toggle-button aria-expanded="false" aria-controls="ai-study-detail">AI-STUDY 미리보기 펼치기</button>
+                  <span class="card-note">카드 아래에서 상세 포트폴리오를 바로 확인할 수 있습니다.</span>
                 </div>
               </div>
             </article>
+            <div class="card-expand card-expand-wide" id="ai-study-detail" hidden>
+              <div class="portfolio-panel-topbar">
+                <span class="card-badge">INLINE PREVIEW</span>
+              </div>
+              <iframe class="portfolio-iframe" src="./ai-study.html" title="AI-STUDY portfolio detail" loading="lazy"></iframe>
+            </div>
           </div>
 
           <div class="card-expand card-expand-wide" id="shortudy-detail" hidden>
             <div class="portfolio-panel-topbar">
               <span class="card-badge card-badge-inline">INLINE PREVIEW</span>
-              <a class="card-cta" href="./shortudy.html">숏터디 상세 페이지 보기</a>
             </div>
-            <div class="portfolio-panel-head">
-              <img
-                class="portfolio-panel-logo"
-                src="./assets/shortudy/logo.svg"
-                alt="Shortudy logo"
-              />
-              <p>
-                숏터디 세로 포트폴리오입니다. 아래 이미지를 위에서 아래로 순서대로
-                확인하면 됩니다.
-              </p>
-            </div>
-            <div class="portfolio-gallery">
-              <img src="./assets/shortudy/01.png" alt="숏터디 포트폴리오 1" loading="lazy" />
-              <img src="./assets/shortudy/02.png" alt="숏터디 포트폴리오 2" loading="lazy" />
-              <img src="./assets/shortudy/03.png" alt="숏터디 포트폴리오 3" loading="lazy" />
-              <img src="./assets/shortudy/04.png" alt="숏터디 포트폴리오 4" loading="lazy" />
-              <img src="./assets/shortudy/05.png" alt="숏터디 포트폴리오 5" loading="lazy" />
-              <img src="./assets/shortudy/06.png" alt="숏터디 포트폴리오 6" loading="lazy" />
-              <img src="./assets/shortudy/07.png" alt="숏터디 포트폴리오 7" loading="lazy" />
-            </div>
+            <iframe class="portfolio-iframe" src="./shortudy.html" title="Shortudy portfolio detail" loading="lazy"></iframe>
           </div>
         </div>
       </section>
