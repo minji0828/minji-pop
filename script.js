@@ -26,26 +26,53 @@ sections.forEach((section) => {
 });
 
 const toggleCards = document.querySelectorAll("[data-toggle-card]");
-const sharedPanel = document.querySelector("#shortudy-detail");
 
 toggleCards.forEach((card) => {
   const button = card.querySelector("[data-toggle-button]");
+  const targetId = button?.getAttribute("aria-controls");
+  const panel = targetId ? document.getElementById(targetId) : null;
 
-  if (!button || !sharedPanel) {
+  if (!button || !panel) {
     return;
   }
 
   button.addEventListener("click", () => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
     const nextExpanded = !isExpanded;
+
+    toggleCards.forEach((otherCard) => {
+      const otherButton = otherCard.querySelector("[data-toggle-button]");
+      const otherTargetId = otherButton?.getAttribute("aria-controls");
+      const otherPanel = otherTargetId ? document.getElementById(otherTargetId) : null;
+
+      if (!otherButton || !otherPanel || otherButton === button) {
+        return;
+      }
+
+      otherButton.setAttribute("aria-expanded", "false");
+      otherButton.textContent = otherTargetId === "shortudy-detail" ? "숏터디 미리보기 펼치기" : otherTargetId === "gaja-detail" ? "GAJA 미리보기 펼치기" : "AI-STUDY 미리보기 펼치기";
+      otherCard.classList.remove("is-expanded");
+      otherPanel.hidden = true;
+    });
+
     button.setAttribute("aria-expanded", String(nextExpanded));
-    sharedPanel.hidden = isExpanded;
+    panel.hidden = isExpanded;
     card.classList.toggle("is-expanded", nextExpanded);
-    button.textContent = nextExpanded ? "숏터디 미리보기 접기" : "숏터디 미리보기 펼치기";
+    button.textContent = nextExpanded
+      ? targetId === "shortudy-detail"
+        ? "숏터디 미리보기 접기"
+        : targetId === "gaja-detail"
+          ? "GAJA 미리보기 접기"
+          : "AI-STUDY 미리보기 접기"
+      : targetId === "shortudy-detail"
+        ? "숏터디 미리보기 펼치기"
+        : targetId === "gaja-detail"
+          ? "GAJA 미리보기 펼치기"
+          : "AI-STUDY 미리보기 펼치기";
 
     if (nextExpanded) {
       requestAnimationFrame(() => {
-        sharedPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     } else {
       button.focus();
