@@ -38,14 +38,19 @@ toggleCards.forEach((card) => {
 
   button.addEventListener("click", () => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!isExpanded));
+    const nextExpanded = !isExpanded;
+    button.setAttribute("aria-expanded", String(nextExpanded));
     sharedPanel.hidden = isExpanded;
-    indicator.textContent = isExpanded ? "열기" : "닫기";
+    card.classList.toggle("is-expanded", nextExpanded);
+    button.classList.toggle("is-expanded", nextExpanded);
+    indicator.textContent = nextExpanded ? "미리보기 닫기" : "미리보기 열기";
 
-    if (!isExpanded) {
+    if (nextExpanded) {
       requestAnimationFrame(() => {
         sharedPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
+    } else {
+      button.focus();
     }
   });
 });
