@@ -117,12 +117,6 @@
             </article>
 
             <article class="card card-toggle card-has-inline" data-toggle-card>
-              <button
-                class="card-toggle-button"
-                type="button"
-                aria-expanded="false"
-                aria-controls="shortudy-detail"
-              >
                 <div class="thumb thumb-logo">
                   <img
                     class="project-logo"
@@ -145,14 +139,16 @@
                 <span class="card-meta">
                   업로드 파이프라인 / 읽기 모델 / Redis / 운영 지표
                 </span>
-                <div class="card-inline-cta" aria-hidden="true">
-                  <span class="card-inline-text">요약 미리보기</span>
-                  <span class="toggle-indicator">미리보기 열기</span>
                 </div>
-                </div>
-              </button>
               <div class="card-actions card-actions-inline">
-                <a class="card-cta-secondary" href="./shortudy.html">숏터디 상세 페이지 보기</a>
+                <button
+                  class="card-cta"
+                  type="button"
+                  data-toggle-button
+                  aria-expanded="false"
+                  aria-controls="shortudy-detail"
+                >숏터디 미리보기 펼치기</button>
+                <a class="card-cta" href="./shortudy.html">숏터디 상세 페이지 보기</a>
                 <span class="card-note">페이지 안에서는 요약 미리보기, 별도 페이지에서는 전체 설명을 제공합니다.</span>
               </div>
             </article>
@@ -187,7 +183,7 @@
           <div class="card-expand card-expand-wide" id="shortudy-detail" hidden>
             <div class="portfolio-panel-topbar">
               <span class="card-badge card-badge-inline">INLINE PREVIEW</span>
-              <a class="card-cta-secondary" href="./shortudy.html">숏터디 상세 페이지 보기</a>
+              <a class="card-cta" href="./shortudy.html">숏터디 상세 페이지 보기</a>
             </div>
             <div class="portfolio-panel-head">
               <img
