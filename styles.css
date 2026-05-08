@@ -1989,17 +1989,18 @@ img {
 
 .vertical-page .vertical-projects {
   display: grid;
-  gap: 0;
+  gap: 18px;
 }
 
 .vertical-page .vertical-project {
-  padding: 34px 0 38px;
-  border-top: 1px solid var(--simple-line);
+  padding: 28px 30px 30px;
+  border: 1px solid var(--simple-line);
+  border-radius: 14px;
+  background: #fff;
 }
 
 .vertical-page .vertical-project:first-child {
-  border-top: 0;
-  padding-top: 4px;
+  padding-top: 28px;
 }
 
 .vertical-page .project-topline {
@@ -2124,5 +2125,9 @@ img {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .vertical-page .vertical-project {
+    padding: 22px 20px 24px;
   }
 }
