@@ -27,6 +27,18 @@ sections.forEach((section) => {
 
 const toggleCards = document.querySelectorAll("[data-toggle-card]");
 
+function getCollapsedLabel(targetId) {
+  if (targetId === "gaja-detail") return "GAJA 흐름과 판단 보기";
+  if (targetId === "shortudy-detail") return "숏터디 업로드/조회 흐름 보기";
+  return "AI-STUDY 역할과 스코프 보기";
+}
+
+function getExpandedLabel(targetId) {
+  if (targetId === "gaja-detail") return "GAJA 흐름과 판단 접기";
+  if (targetId === "shortudy-detail") return "숏터디 업로드/조회 흐름 접기";
+  return "AI-STUDY 역할과 스코프 접기";
+}
+
 toggleCards.forEach((card) => {
   const button = card.querySelector("[data-toggle-button]");
   const targetId = button?.getAttribute("aria-controls");
@@ -50,7 +62,7 @@ toggleCards.forEach((card) => {
       }
 
       otherButton.setAttribute("aria-expanded", "false");
-      otherButton.textContent = otherTargetId === "shortudy-detail" ? "숏터디 미리보기 펼치기" : otherTargetId === "gaja-detail" ? "GAJA 미리보기 펼치기" : "AI-STUDY 미리보기 펼치기";
+      otherButton.textContent = getCollapsedLabel(otherTargetId);
       otherCard.classList.remove("is-expanded");
       otherPanel.hidden = true;
     });
@@ -58,17 +70,7 @@ toggleCards.forEach((card) => {
     button.setAttribute("aria-expanded", String(nextExpanded));
     panel.hidden = isExpanded;
     card.classList.toggle("is-expanded", nextExpanded);
-    button.textContent = nextExpanded
-      ? targetId === "shortudy-detail"
-        ? "숏터디 미리보기 접기"
-        : targetId === "gaja-detail"
-          ? "GAJA 미리보기 접기"
-          : "AI-STUDY 미리보기 접기"
-      : targetId === "shortudy-detail"
-        ? "숏터디 미리보기 펼치기"
-        : targetId === "gaja-detail"
-          ? "GAJA 미리보기 펼치기"
-          : "AI-STUDY 미리보기 펼치기";
+    button.textContent = nextExpanded ? getExpandedLabel(targetId) : getCollapsedLabel(targetId);
 
     if (nextExpanded) {
       requestAnimationFrame(() => {
