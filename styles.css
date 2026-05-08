@@ -1967,6 +1967,36 @@ img {
   gap: 22px;
 }
 
+.vertical-page .personal-list {
+  display: grid;
+  gap: 20px;
+}
+
+.vertical-page .personal-list article {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--simple-line);
+}
+
+.vertical-page .personal-list article:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.vertical-page .personal-list h3 {
+  margin-bottom: 8px;
+  color: var(--simple-text);
+  font-size: 1.04rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.vertical-page .personal-list p {
+  color: var(--simple-sub);
+  font-size: 0.96rem;
+  line-height: 1.78;
+  letter-spacing: -0.015em;
+}
+
 .vertical-page .focus-list article {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
