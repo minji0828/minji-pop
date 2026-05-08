@@ -204,11 +204,6 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-.card.is-expanded {
-  border-color: rgba(84, 101, 75, 0.28);
-  background: #fcfbf8;
-}
-
 .card-copy {
   min-width: 0;
 }
@@ -283,89 +278,6 @@ h3 {
   outline-offset: 2px;
 }
 
-.card-cta[aria-expanded="true"] {
-  background: rgba(84, 101, 75, 0.08);
-  color: var(--accent-dark);
-  border-color: rgba(84, 101, 75, 0.28);
-}
-
-.card-cta[aria-expanded="true"]::after {
-  content: "–";
-}
-
-.card-expand {
-  padding: 0.75rem;
-  margin-top: 0.75rem;
-  background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: none;
-}
-
-.portfolio-iframe {
-  display: block;
-  width: 100%;
-  min-height: 72rem;
-  border: 0;
-  border-radius: 10px;
-  background: #fff;
-}
-
-.card-expand-wide {
-  width: 100%;
-}
-
-.portfolio-panel-topbar { display:none; }
-
-.portfolio-panel-head {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.portfolio-panel-head p {
-  margin: 0;
-}
-
-.portfolio-panel-logo,
-.project-logo {
-  display: block;
-  width: 10.5rem;
-  max-width: 100%;
-}
-
-.portfolio-gallery {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.portfolio-gallery img {
-  display: block;
-  width: 100%;
-  border: 1px solid var(--line);
-  background: #fff;
-  box-shadow: 0 12px 30px rgba(48, 52, 58, 0.08);
-}
-
-.thumb {
-  display: grid;
-  place-items: center;
-  min-height: 9.5rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, rgba(108, 130, 96, 0.94), rgba(108, 130, 96, 0.7));
-  color: #fff;
-  font-weight: 800;
-  text-align: center;
-}
-
-.thumb-logo {
-  background: linear-gradient(135deg, rgba(14, 213, 103, 0.1), rgba(7, 176, 99, 0.14));
-  border: 1px solid rgba(7, 176, 99, 0.18);
-}
-
 .card h4,
 .card p,
 .journey-list p {
@@ -399,10 +311,6 @@ h3 {
   .container {
     width: min(100% - 2rem, 58rem);
     padding: 3rem 0;
-  }
-
-  .card-toggle-button {
-    grid-template-columns: 1fr;
   }
 
   .card {
