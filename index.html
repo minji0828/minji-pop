@@ -26,8 +26,8 @@
         <p class="intro-label">Backend Developer</p>
         <h1 id="intro-heading">안녕하세요.<br />백엔드 개발자 지민수입니다.</h1>
         <p class="intro-text">
-          Spring Boot를 중심으로 인증, 조회 API, 파일 업로드, 운영 지표 API를 구현했습니다.
-          프로젝트를 진행하며 사용자가 요청한 데이터가 안정적으로 흐르고, 운영자가 이해할 수 있는 기준으로 응답하는 서버를 고민했습니다.
+          Java와 Spring Boot를 중심으로 위치 기반 서비스, 숏폼 학습 플랫폼, AI 교육 지원 MVP를 구현했습니다.
+          프로젝트에서는 단순 기능 구현보다 조회 로직, 업로드 상태, 권한 범위, 운영 지표처럼 서비스가 흔들리기 쉬운 기준을 정리하는 데 집중했습니다.
         </p>
         <div class="intro-links" aria-label="연락 링크">
           <a href="mailto:entersuk1998@naver.com">entersuk1998@naver.com</a>
@@ -39,19 +39,27 @@
 
   <main class="simple-container">
     <section class="simple-section" aria-labelledby="focus-heading">
-      <h2 id="focus-heading">주로 고민한 부분</h2>
+      <h2 id="focus-heading">포트폴리오에서 보여주고 싶은 부분</h2>
       <div class="focus-list">
         <article>
-          <h3>조회 API</h3>
-          <p>화면에서 필요한 데이터를 빠르게 가져올 수 있도록 Projection, N+1 완화, 캐시 집계 방식을 적용했습니다.</p>
+          <h3>위치 기반 조회와 주행 데이터 처리</h3>
+          <p>GAJA에서 최근접 코스 탐색에 local window와 segment projection 방식을 적용하고, Raw Point 저장과 Async Finalization 후처리 흐름을 분리했습니다.</p>
         </article>
         <article>
-          <h3>인증과 권한</h3>
-          <p>JWT 인증, 역할 분리, 접근 범위를 정리해 사용자별로 볼 수 있는 데이터 기준을 명확히 했습니다.</p>
+          <h3>업로드 파이프라인과 상태 분리</h3>
+          <p>숏터디에서 S3 Presigned URL 기반 Direct Upload를 적용하고, 업로드 완료와 게시 가능 상태를 분리해 미완료 세션과 고아 객체 문제를 고민했습니다.</p>
         </article>
         <article>
-          <h3>운영 기준</h3>
-          <p>통계 산출 기준, 업로드 책임 분리, 시간대 처리처럼 운영 중 헷갈릴 수 있는 부분을 API에 반영했습니다.</p>
+          <h3>조회 성능과 지연 집계</h3>
+          <p>Projection 기반 읽기 모델, Redis Write-back 집계, 키워드 배치 조회를 조합해 조회수처럼 쓰기 경합이 큰 데이터를 안정적으로 다루려 했습니다.</p>
+        </article>
+        <article>
+          <h3>운영 기준과 관측 가능성</h3>
+          <p>BackOffice 지표 API에서 KST, 분모/분자, 반올림 규칙을 서버 기준으로 고정하고, GAJA에서는 request_id 로그 추적과 Prometheus/Grafana 모니터링을 구성했습니다.</p>
+        </article>
+        <article>
+          <h3>AI 기능의 사용 범위 제한</h3>
+          <p>AI-STUDY에서 schoolId 기반 스코프, 교사/학생/운영자 역할 분리, 자료 범위 안에서만 답하는 QA 흐름을 설계해 AI 기능의 경계를 먼저 정했습니다.</p>
         </article>
       </div>
     </section>
@@ -65,14 +73,14 @@
             <span>개인 프로젝트</span>
           </div>
           <h3>GAJA</h3>
-          <p class="project-desc">자전거 여행 중 경로, 날씨, 주행 상태를 확인하는 위치 기반 HUD 서비스입니다.</p>
+          <p class="project-desc">자전거 주행 중 외부 앱 재진입을 줄이기 위해 경로, 날씨, 주행 상태를 한 화면에 제공하는 위치 기반 HUD 서비스입니다.</p>
           <ul>
-            <li>GPS 위치 데이터 수집과 주행 기록 저장 흐름 설계</li>
-            <li>JWT 기반 인증 구조 정리</li>
-            <li>외부 기상 API 실패 상황을 고려한 응답 흐름 고민</li>
+            <li>최근접 코스 탐색에 local window + segment projection 방식 적용</li>
+            <li>Raw Point 저장과 Async Finalization 후처리 로직 분리</li>
+            <li>Refresh Token Rotation, request_id 로그 추적, 모니터링 구성</li>
           </ul>
           <div class="project-bottom">
-            <span>Spring Boot · JWT · Location API</span>
+            <span>Spring Boot · PostGIS · Redis · Prometheus</span>
             <a href="./gaja.html">포트폴리오 보기</a>
           </div>
         </article>
@@ -83,11 +91,11 @@
             <span>팀 프로젝트 · 팀장</span>
           </div>
           <h3>숏터디</h3>
-          <p class="project-desc">짧은 학습 영상을 업로드하고 소비하는 숏폼 학습 콘텐츠 플랫폼입니다.</p>
+          <p class="project-desc">짧은 학습 영상을 업로드하고 소비하는 숏폼 학습 플랫폼으로, 팀 프로젝트에서 백엔드와 운영 구조를 맡았습니다.</p>
           <ul>
-            <li>S3 Direct Upload로 서버와 업로드 책임 분리</li>
-            <li>Redis Write-back 방식으로 조회·좋아요·통계 집계 완충</li>
-            <li>BackOffice 지표 API와 팀 일정 우선순위 조율</li>
+            <li>S3 Presigned URL 기반 Direct Upload와 업로드 세션 관리</li>
+            <li>게시 상태와 업로드 상태 분리, Projection 읽기 모델 구성</li>
+            <li>Redis Write-back 조회수 집계와 BackOffice 운영 지표 API 구현</li>
           </ul>
           <div class="project-bottom">
             <span>S3 · Redis · BackOffice</span>
@@ -101,11 +109,11 @@
             <span>개인 프로젝트</span>
           </div>
           <h3>AI-STUDY</h3>
-          <p class="project-desc">수업 자료를 기반으로 질문과 복습을 돕는 AI 학습 보조 서비스입니다.</p>
+          <p class="project-desc">수업자료 PDF를 기반으로 문제 생성, 풀이/채점, 결과 확인, 자료 기반 질의응답을 연결한 AI 교육 지원 MVP입니다.</p>
           <ul>
-            <li>학교·교사·학생 역할별 접근 범위 분리</li>
-            <li>학습 자료 기반 응답을 위한 프롬프트 기준 정리</li>
-            <li>AI 기능 사용량과 응답 범위를 제한하는 구조 설계</li>
+            <li>자료 업로드 → 문제 생성 → 풀이/채점 → 결과 확인 흐름 구성</li>
+            <li>schoolId 기반 논리적 스코프와 교사/학생/운영자 역할 분리</li>
+            <li>자료 범위 안에서만 답하는 QA 흐름과 프롬프트 기준 정리</li>
           </ul>
           <div class="project-bottom">
             <span>RBAC · AI Guardrail · Prompt</span>
