@@ -3,484 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI-STUDY | 초·중·고 태블릿 환경을 위한 AI 학습 플랫폼</title>
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
-  </script>
-  <style>
-    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-
-    :root {
-      --bg: #ffffff;
-      --text: #111111;
-      --text-muted: #5f6368;
-      --text-soft: #7b8088;
-      --line: rgba(17, 17, 17, 0.12);
-      --line-strong: rgba(17, 17, 17, 0.22);
-      --block: #f5f6f7;
-      --block-strong: #eef0f2;
-      --accent: #0f766e;
-      --max-width: 720px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
-
-    h1, h2, h3, h4, p, ul, ol, dl, dd { margin: 0; }
-
-    main {
-      width: min(calc(100% - 32px), var(--max-width));
-      margin: 0 auto;
-      padding: 52px 0 96px;
-    }
-
-    section {
-      padding: 32px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    section:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .eyebrow,
-    .fact-label,
-    .mini-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-soft);
-    }
-
-    .eyebrow { margin-bottom: 18px; }
-
-    .intro-title {
-      font-size: clamp(1.56rem, 3.6vw, 2.2rem);
-      line-height: 1.3;
-      letter-spacing: -0.03em;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .intro-subtitle,
-    .section-summary,
-    .caption,
-    .note {
-      color: var(--text-muted);
-      line-height: 1.75;
-      font-size: 0.98rem;
-    }
-
-    .body-copy,
-    .list,
-    .fact-value,
-    .case-copy {
-      font-size: 1rem;
-      line-height: 1.82;
-      color: var(--text);
-    }
-
-    .body-copy + .body-copy,
-    .case-copy + .case-copy,
-    .note + .note { margin-top: 12px; }
-
-    .meta-line {
-      margin-top: 28px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line-strong);
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 20px;
-    }
-
-    .section-header { margin-bottom: 18px; }
-    .section-title {
-      font-size: clamp(1.42rem, 3vw, 1.96rem);
-      line-height: 1.28;
-      letter-spacing: -0.03em;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .subheading {
-      font-size: 1.06rem;
-      line-height: 1.5;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .block,
-    .evidence-card,
-    .diagram-block {
-      background: var(--block);
-      border: 1px solid var(--line);
-      padding: 18px 20px;
-      margin-top: 18px;
-    }
-
-    .evidence-card { background: var(--block-strong); }
-
-    .diagram-mermaid {
-      display: block;
-      width: 100%;
-      overflow: auto;
-      padding: 20px;
-      background: #ffffff;
-      border: 1px solid var(--line);
-    }
-
-    .placeholder-grid {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .placeholder-shot {
-      border: 1px dashed var(--line-strong);
-      background: rgba(255, 255, 255, 0.72);
-      min-height: 172px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .placeholder-shot strong {
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    .placeholder-shot span {
-      color: var(--text-muted);
-      font-size: 0.94rem;
-      line-height: 1.7;
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .stack-list,
-    .list {
-      padding-left: 18px;
-    }
-
-    .stack-list li,
-    .list li { margin-top: 8px; }
-
-    .timeline {
-      border-left: 2px solid var(--line);
-      padding-left: 16px;
-      margin-top: 18px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .timeline-item-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .status::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .quote {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-left: 3px solid var(--text);
-      background: rgba(17,17,17,0.03);
-      font-size: 0.98rem;
-      line-height: 1.8;
-    }
-
-    .footer-note {
-      margin-top: 28px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-      color: var(--text-soft);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.92em;
-      background: rgba(17,17,17,0.05);
-      padding: 0.12rem 0.34rem;
-      border-radius: 6px;
-    }
-
-    @media (max-width: 720px) {
-      .meta-line,
-      .grid-two { grid-template-columns: 1fr; }
-      main { padding: 36px 0 72px; }
-      section { padding: 28px 0; }
-    }
-  </style>
+  <title>AI-STUDY | 지민수 포트폴리오</title>
+  <meta name="description" content="AI-STUDY - 수업 자료 기반 AI 학습 보조 서비스의 백엔드 설계 및 개발 상세." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <section>
-      <span class="eyebrow">AI Education MVP</span>
-      <h1 class="intro-title">AI-STUDY는 초·중·고 태블릿 환경에서, 수업자료 PDF를 기준으로 문제 생성, 풀이, 결과 확인, 자료 기반 재질문까지 이어지는 AI 학습 플랫폼 MVP입니다.</h1>
-      <p class="intro-subtitle">교사·학생·운영자 역할을 분리하고, React/Vite · Spring Boot · FastAPI를 나눠 배치해 짧은 공모전 기간 안에서도 제품 흐름과 서비스 경계를 함께 검증하려고 했습니다.</p>
-      <p class="body-copy">이 프로젝트에서 가장 중요하게 본 것은 “AI 기능을 많이 붙이는 것”이 아니라, <strong>수업자료를 기준으로 학습 점검 → 결과 해석 → 보충학습</strong>이 다시 이어지는 폐루프를 만드는 일이었습니다. 공모전 MVP였기 때문에 운영 기능을 넓게 확장하기보다, 학교 현장에서 먼저 체감할 수 있는 교사·학생 핵심 흐름을 우선적으로 닫았습니다.</p>
+  <header class="detail-header">
+    <div class="container">
+      <a class="back-link" href="./index.html">포트폴리오 목록으로</a>
+      <h1>AI-STUDY</h1>
+      <p class="detail-subtitle">수업 자료 기반 AI 학습 보조 서비스</p>
+      <div class="detail-meta">
+        <span>개인 프로젝트</span>
+        <span>Spring Boot</span>
+        <span>AI 연동</span>
+      </div>
+    </div>
+  </header>
 
-      <div class="meta-line">
-        <div>
-          <span class="fact-label">Role</span>
-          <p class="fact-value">개인 프로젝트 · 기획 / 프론트 / 백엔드 / AI 연동</p>
-        </div>
-        <div>
-          <span class="fact-label">Goal</span>
-          <p class="fact-value">학교 보급 태블릿 환경에서 바로 시연 가능한 교육 AI MVP 구현</p>
-        </div>
-        <div>
-          <span class="fact-label">Stack</span>
-          <p class="fact-value">React + Vite + TypeScript / Spring Boot / FastAPI / PostgreSQL</p>
-        </div>
-        <div>
-          <span class="fact-label">Deploy</span>
-          <p class="fact-value">Frontend Vercel · Backend / AI Railway 기준 설계</p>
-        </div>
-      </div>
-    </section>
+  <main class="detail-content">
+    <div class="container">
+      <h2>프로젝트 개요</h2>
+      <p>
+        코드 저장소: <a href="https://github.com/MINJI-AI-STUDY/AI-BACK" target="_blank" rel="noopener noreferrer">MINJI-AI-STUDY/AI-BACK</a>
+      </p>
+      <p>
+        AI-STUDY는 수업 자료 PDF를 업로드하면 문제 생성, 학생 풀이/채점, 결과 확인, 자료 기반 질의응답을 연결하는 교육 지원 MVP입니다.
+      </p>
+      <p>
+        학교 과제 스코프 내에서 완성도를 목표로 했으며, 역할 분리(학생/교사)와 AI 응답의 적절성 제한을 핵심 설계 과제로 다루었습니다.
+      </p>
 
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">어떤 사용 환경을 상정했는가</h2>
-        <p class="section-summary">이 프로젝트는 일반 웹 학습 플랫폼이 아니라, 학교에서 이미 보급된 태블릿으로 수업자료를 보며 바로 학습 흐름에 들어가는 상황을 상정했습니다.</p>
-      </div>
-      <p class="body-copy">핵심 전제는 학생이 별도 학습 툴을 새로 배우는 것이 아니라, 수업 중 보던 자료를 그대로 기준으로 문제를 풀고 모르는 내용을 다시 질문할 수 있어야 한다는 점이었습니다. 그래서 자료 열람, 문제 풀이, 결과 확인, AI 질문을 서로 다른 서비스가 아니라 하나의 문서 중심 흐름 안에 배치하려고 했습니다.</p>
-      <div class="block">
-        <div class="mini-label">Why this matters</div>
-        <p class="case-copy">태블릿 보급 환경에서는 기능 수가 많기보다, 입력 부담이 적고 현재 보고 있는 자료 맥락을 잃지 않는 흐름이 더 중요하다고 봤습니다. AI-STUDY는 이 점에서 “문서 중심 학습 보조 도구”에 가깝게 설계했습니다.</p>
-      </div>
-    </section>
+      <h2>주요 기능 및 설계</h2>
 
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">왜 이 문제를 풀었는가</h2>
-        <p class="section-summary">문제를 단순 “AI 챗봇 추가”가 아니라, 디지털 수업자료가 실제 수업 안에서 제대로 활용되지 못하는 흐름의 단절로 정의했습니다.</p>
-      </div>
-      <p class="body-copy">학생은 자료를 보다가 막히는 개념이 생겨도 바로 확인하기 어렵고, 교사는 같은 자료를 기준으로 형성평가용 문항을 만들고 학생 이해도를 점검하는 데 시간을 씁니다. 기존 도구는 자료 열람, 질문, 문제 풀이가 분리되어 있어 수업 흐름 안에서 자연스럽게 이어지지 못하는 경우가 많았습니다.</p>
-      <div class="quote">AI-STUDY는 자료 업로드 → 문제 생성 → 풀이/채점 → 결과 확인 → 자료 기반 재질문을 하나의 제품 흐름으로 묶어, “평가가 끝나면 학습도 끝나는 구조”가 아니라 “결과가 다시 학습으로 이어지는 구조”를 만드는 데 초점을 맞췄습니다.</div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">핵심 사용자 흐름</h2>
-        <p class="section-summary">교사, 학생, 운영자의 책임을 분리하고, 각각이 같은 자료를 다른 목적에서 다루도록 설계했습니다.</p>
-      </div>
-      <div class="grid-two">
-        <div class="evidence-card">
-          <div class="mini-label">Teacher</div>
-          <ul class="list">
-            <li>PDF 수업자료 업로드</li>
-            <li>AI 문제 생성</li>
-            <li>문항 검토 / 수정</li>
-            <li>배포 코드 발급</li>
-            <li>학생 결과와 취약 개념 확인</li>
-          </ul>
-        </div>
-        <div class="evidence-card">
-          <div class="mini-label">Student</div>
-          <ul class="list">
-            <li>배포 코드로 문제 세트 입장</li>
-            <li>객관식 풀이 및 제출</li>
-            <li>점수 / 해설 확인</li>
-            <li>오답 기반 AI follow-up 질문</li>
-            <li>자료를 다시 보며 보충학습</li>
-          </ul>
-        </div>
-      </div>
-      <div class="block">
-        <div class="mini-label">Operator</div>
-        <p class="case-copy">운영자는 학교 범위 overview와 가입 승인 흐름을 담당합니다. 현재 shipped UX는 overview와 승인에 집중하고, 학교/학급/사용자 관리 capability는 백엔드에 남겨 둔 상태로 범위를 통제했습니다.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">학교 범위 진입을 어떻게 다뤘는가</h2>
-        <p class="section-summary">학생 로그인을 일반 계정 체계와 분리하고, 학교 범위 안에서만 식별과 접근이 일어나도록 설계했습니다.</p>
-      </div>
-      <div class="grid-two">
-        <div class="evidence-card">
-          <h3 class="subheading">학생 로그인 분리</h3>
-          <p class="case-copy">학생은 일반 교직원 로그인과 다른 경로를 사용합니다. <code>schoolId + studentCode + PIN</code> 조합으로 진입하게 해, 학교 범위 안에서만 계정 식별이 이루어지도록 했습니다.</p>
-        </div>
-        <div class="evidence-card">
-          <h3 class="subheading">학교 검색 및 동기화</h3>
-          <p class="case-copy">프론트에는 학교 검색 입력 흐름이 있고, 백엔드에는 학교 마스터 동기화와 학교 범위 정책이 별도로 존재합니다. 즉, 학교 선택 자체를 제품의 핵심 진입 조건으로 본 구조입니다.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">시스템 구조</h2>
-        <p class="section-summary">짧은 공모전 MVP였지만 프론트, 백엔드, AI 서비스를 분리해 책임 경계를 명확히 두었습니다.</p>
-      </div>
-      <div class="grid-two">
-        <div class="evidence-card">
-          <h3 class="subheading">Frontend</h3>
-          <p class="case-copy">React + Vite + TypeScript. 교사/학생/운영자 라우트, 문서 중심 workspace, 문제 풀이와 결과 화면, QA 진입 흐름을 담당합니다.</p>
-        </div>
-        <div class="evidence-card">
-          <h3 class="subheading">Backend</h3>
-          <p class="case-copy">Spring Boot. 인증/권한, 자료, 문제 세트, 제출, 결과, 대시보드, QA 로그, 학교 단위 스코프를 담당합니다.</p>
-        </div>
-      </div>
-      <div class="block">
-        <h3 class="subheading">AI Service</h3>
-        <p class="case-copy">FastAPI 기반 별도 서비스로 PDF 분석, 문제 생성, 자료 기반 QA를 분리했습니다. 백엔드는 <code>APP_AI_BASE_URL</code>을 통해 외부 AI 서비스를 호출하고, 프론트는 백엔드 API만 바라보도록 구성했습니다.</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">핵심 설계 및 구현 포인트</h2>
-        <p class="section-summary">기능 나열보다, 어떤 기준으로 제품을 잘랐고 어떤 리스크를 먼저 통제했는지에 초점을 맞췄습니다.</p>
-      </div>
-      <div class="timeline">
-        <div>
-          <p class="timeline-item-title">1. 학교 단위 논리 멀티테넌시</p>
-          <p class="case-copy">MVP 단계에서 과한 인프라 복잡도를 가져가기보다, <code>schoolId</code> 기반 논리적 분리와 권한 스코프 검증으로 필요한 수준의 학교 범위 분리를 먼저 적용했습니다. 즉, 물리 분리보다 적재적소의 논리 분리에 집중했고, 자료·문제세트·제출·질의응답 로그 전반에서 school scope를 반복 검증합니다.</p>
-        </div>
-        <div>
-          <p class="timeline-item-title">2. 역할 기반 진입과 UX 분리</p>
-          <p class="case-copy">교사/학생/운영자 라우트를 분리하고, 각 역할이 보는 홈과 작업 흐름을 다르게 구성했습니다. 동일한 자료를 기준으로 하되 목적은 다르게 설계했습니다.</p>
-        </div>
-        <div>
-          <p class="timeline-item-title">3. 자료 범위 밖 질문 차단</p>
-          <p class="case-copy">학생 AI를 자유대화형 챗봇으로 열지 않고, 현재 학습 자료 범위 안에서만 답하도록 제한했습니다. out-of-domain 질문에 대한 fallback 응답과 근거 부족 상태를 테스트로 분리해, “자료 기반 학습 도우미”라는 제품 성격을 유지하려고 했습니다.</p>
-        </div>
-        <div>
-          <p class="timeline-item-title">4. 결과 이후 보충학습 연결</p>
-          <p class="case-copy">단순 자동채점에서 끝내지 않고, 결과 확인 화면이 오답 기반 follow-up 질문으로 이어지도록 설계했습니다. 평가가 종료점이 아니라 재학습의 시작점이 되도록 본 것입니다.</p>
-        </div>
-      </div>
-      <div class="diagram-block">
-        <div class="mini-label">Architecture Diagram</div>
-        <div class="diagram-mermaid">
-flowchart LR
-  FE[Frontend\nReact + Vite + TypeScript\nVercel] --> BE[Backend\nSpring Boot\nRailway]
-  BE --> DB[(PostgreSQL)]
-  BE --> R2[(PDF Storage\nCloudflare R2 / local)]
-  BE --> AI[AI Service\nFastAPI\nRailway]
-  T[Teacher] --> FE
-  S[Student] --> FE
-  O[Operator] --> FE
-  SS[School Scope\nschoolId-based logical separation] -. policy .-> BE
-  AI --> PDF[PDF Extraction / Question Generation / QA]
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">기술 선택과 트레이드오프</h2>
-        <p class="section-summary">목표는 “완전한 교육 운영 시스템”이 아니라, 일주일 단위 공모전 안에서 핵심 가치가 전달되는 제품 흐름을 실제로 ship하는 것이었습니다.</p>
-      </div>
-      <ul class="stack-list body-copy">
-        <li><strong>React + Vite + TypeScript</strong>로 빠르게 역할별 화면과 문서 중심 workspace를 구현했습니다.</li>
-        <li><strong>Spring Boot + PostgreSQL</strong>로 인증, 권한, 제출, 대시보드, 학교 스코프를 분리했습니다.</li>
-        <li><strong>FastAPI + LangChain 계열 라이브러리</strong>로 PDF 분석, 문제 생성, 자료 기반 QA를 별도 서비스로 분리했습니다.</li>
-        <li><strong>Railway / Vercel</strong> 기준 문서와 런북을 두어, 단순 로컬 데모가 아니라 배포 가능한 구조를 남겼습니다.</li>
-        <li>운영 기능을 과하게 넓히지 않고, <strong>원하는 서비스를 무리 없이 제공하는 데 필요한 범위</strong>에 집중했습니다.</li>
-        <li>기능을 많이 보여주기보다, <strong>역할별 플로우와 시스템 경계가 실제로 닫혀 있는지</strong>를 설명하는 방향으로 정리했습니다.</li>
+      <h3>자료 기반 문제 생성 파이프라인</h3>
+      <p>
+        업로드된 PDF 자료에서 텍스트를 추출하고, AI 서버 연동 결과를 문제 세트로 저장합니다. 생성 결과는 서버에서 필요한 개수와 구조를 검증한 뒤 교사용 게시 흐름으로 연결합니다.
+      </p>
+      <ul>
+        <li>PDF 자료 업로드와 텍스트 추출 흐름 구성</li>
+        <li>AI 서버 응답의 문제 개수와 필수 필드 구조 검증</li>
+        <li>AI 서버 응답이 부족할 때 keyword 기반 fallback 문제 생성</li>
       </ul>
-    </section>
 
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">포트폴리오에서 특히 보여줄 만한 점</h2>
-        <p class="section-summary">단기간 MVP지만, 단순 데모보다 제품형 프로젝트에 가깝게 설명할 수 있는 근거가 있습니다.</p>
-      </div>
-      <ul class="stack-list body-copy">
-        <li>PRD의 핵심 플로우가 프론트 라우트, 백엔드 API, AI 서비스까지 실제로 이어지는지 별도 문서로 역검증했습니다.</li>
-        <li>학교 범위 스코프, 학생 전용 로그인, QA 로그 저장처럼 교육 도메인에서 필요한 제약을 얇게나마 제품에 반영했습니다.</li>
-        <li>문서 중심 workspace를 기준으로 문제 생성, 풀이, 결과, 재질문을 한 흐름에 두어 학습 맥락이 끊기지 않도록 설계했습니다.</li>
+      <h3>역할 기반 접근 제어</h3>
+      <p>
+        교사와 학생의 사용 흐름이 명확히 다르므로, 역할별로 기능과 데이터 접근 범위를 분리했습니다.
+      </p>
+      <ul>
+        <li>교사: 자료 업로드, 문제 세트 생성 및 편집, 학습 진도 조회</li>
+        <li>학생: 할당된 문제 세트 풀이, 질의응답, 진도 확인</li>
+        <li>API 레벨에서 <span class="highlight">역할 기반 권한 검증</span>을 수행하여 클라이언트 우회 방지</li>
       </ul>
-    </section>
 
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">검증 포인트와 실제 근거</h2>
-        <p class="section-summary">설명을 뒷받침하는 코드/문서 기준 근거를 함께 정리했습니다.</p>
-      </div>
-      <div class="grid-two">
-        <div class="evidence-card">
-          <div class="status">확인된 제품 흐름</div>
-          <p class="case-copy">교사/학생/운영자 시연 흐름, 데모 계정, 권장 체험 순서가 별도 사용설명서로 정리되어 있어 단순 시안이 아니라 시연 가능한 MVP 상태를 가집니다.</p>
-        </div>
-        <div class="evidence-card">
-          <div class="status">검증된 QA 제한</div>
-          <p class="case-copy">자료와 무관한 질문에 대해 “현재 올려주신 학습 자료 범위 안에서 답변”하도록 fallback 테스트가 존재합니다.</p>
-        </div>
-        <div class="evidence-card">
-          <div class="status">실배포 고려</div>
-          <p class="case-copy">Frontend Vercel, Backend/AI Railway, PostgreSQL, R2, CORS, seed 계정, health check, release gate 문서까지 운영 관점의 흔적이 남아 있습니다.</p>
-        </div>
-        <div class="evidence-card">
-          <div class="status">문서와 코드의 연결</div>
-          <p class="case-copy">기능명세, 데이터명세, API 명세, 역할별 플로우 맵, 시스템 경계 문서가 각각 존재해 프로젝트의 판단 근거를 추적할 수 있습니다.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">한계와 다음 단계</h2>
-        <p class="section-summary">MVP였기 때문에 의도적으로 남겨 둔 부분과 실제로 보완이 필요한 부분을 구분해서 보는 것이 중요합니다.</p>
-      </div>
-      <ul class="stack-list body-copy">
-        <li>운영자 UX는 overview / 가입 승인 중심으로 얇게 노출되어 있고, latent capability 전체를 아직 프론트에 다 드러내지 않았습니다.</li>
-        <li>문서 일부와 수동 QA 문서가 실제 current 상태와 드리프트가 있어 정렬이 필요합니다.</li>
-        <li>프론트 테스트 하네스는 잔여 실패 케이스가 있어 안정화가 더 필요합니다.</li>
-        <li>다음 웨이브에서는 operator 지표 확장, 증거 캡처 보강, 시스템 다이어그램 정리, latent API 노출 여부 결정을 진행할 수 있습니다.</li>
+      <h3>AI 질의응답 제한</h3>
+      <p>
+        AI 응답이 수업 자료 범위를 벗어나지 않도록, 자료 텍스트를 근거로 한 답변과 근거 부족 상태를 구분하도록 설계했습니다.
+      </p>
+      <ul>
+        <li>자료 텍스트 기반 grounded 응답 여부와 근거 snippet 저장</li>
+        <li>근거가 부족한 질문에는 insufficient evidence 상태와 fallback 응답 처리</li>
+        <li>질의응답 로그를 저장해 이후 검토 가능한 흐름 구성</li>
       </ul>
-    </section>
 
-    <section>
-      <div class="section-header">
-        <h2 class="section-title">이 프로젝트를 통해 보여주고 싶은 점</h2>
-        <p class="section-summary">AI 기능을 얹는 것보다, 제품의 흐름과 책임을 어떻게 나눴는지 보여주는 쪽에 더 무게를 두었습니다.</p>
+      <h2>기술적 고민</h2>
+
+      <h3>AI 응답의 구조 검증과 fallback</h3>
+      <p>
+        외부 AI 서버 응답은 항상 같은 품질과 형식으로 온다고 가정하기 어렵기 때문에, 서버에서 문제 개수와 필수 필드를 검증하고 부족한 경우 fallback 데이터를 생성하도록 처리했습니다.
+      </p>
+      <div class="info-box">
+        질의응답 역시 자료 근거가 충분한 응답과 근거 부족 응답을 구분해 저장하고, AI 연동 실패 시에도 사용자에게 일관된 fallback 메시지를 반환하도록 구성했습니다.
       </div>
-      <p class="body-copy">AI-STUDY는 “AI를 붙였다”보다 <strong>학교 보급 태블릿 환경에서 실제로 쓸 수 있는 학습 흐름을 어떤 경계로 설계하고, 어떤 범위까지를 MVP로 인정할지 판단한 프로젝트</strong>에 가깝습니다. 특히 학교 단위 스코프, 역할 기반 라우팅, 자료 기반 QA 제한, 결과 이후 보충학습 연결 같은 요소는 짧은 기간 안에서도 우선순위를 나눠 제품을 만드는 방식을 보여줍니다.</p>
-    </section>
+
+      <h3>학교 스코프 내 완성도</h3>
+      <p>
+        제한된 기간과 인력 내에서 핵심 기능의 완성도를 우선시했습니다. 추천 시스템이나 실시간 협업 기능 같은 확장 아이디어는 일단 배제하고, 자료 업로드 &rarr; 문제 생성 &rarr; 학습 &rarr; 질의응답이라는 <span class="highlight">핵심 흐름의 안정성</span>에 집중했습니다.
+      </p>
+
+      <h2>회고</h2>
+      <p>
+        AI-STUDY 프로젝트를 통해 외부 AI 서비스와의 연동 경계, 응답 구조 검증, fallback 처리의 중요성을 경험했습니다. 특히 AI가 생성한 결과를 그대로 신뢰하지 않고 서버 레벨에서 검증 가능한 형태로 다루는 설계가 서비스 안정성에 중요하다는 점을 배웠습니다.
+      </p>
+    </div>
   </main>
+
+  <footer class="doc-footer">
+    <div class="container">
+      <p class="footer-copy">
+        <a href="./index.html">&larr; 포트폴리오 목록으로 돌아가기</a>
+      </p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="맨 위로 이동">
+    <span aria-hidden="true">&#8593;</span>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>

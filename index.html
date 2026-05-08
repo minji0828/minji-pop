@@ -59,7 +59,7 @@
         </article>
         <article>
           <h3>일단 맡고 부딪히며 배웁니다</h3>
-          <p>잘 모르는 역할도 피하기보다 먼저 해보고, 시행착오와 피드백을 통해 익히는 편입니다. 팀 프로젝트에서 팀장과 발표를 반복해서 맡으며 부족한 부분을 확인하고 다음 시도에 반영했습니다.</p>
+          <p>잘 모르는 역할도 피하기보다 먼저 해보고, 시행착오와 피드백을 통해 익히는 편입니다. 팀 프로젝트와 발표를 반복해서 맡으며 부족한 부분을 확인하고 다음 시도에 반영했습니다.</p>
         </article>
         <article>
           <h3>큰그림에서 디테일로 내려가며 학습합니다</h3>
@@ -85,29 +85,35 @@
           <ul>
             <li>최근접 코스 탐색에 local window + segment projection 방식 적용</li>
             <li>Raw Point 저장과 Async Finalization 후처리 로직 분리</li>
-            <li>k6 100 concurrent read 조건에서 overall p95 12.41ms 확인</li>
+            <li>k6 기반 조회 경로 부하 검증 스크립트와 p95 지표 확인 흐름 구성</li>
           </ul>
           <div class="project-bottom">
             <span>Spring Boot · PostGIS · Redis · Prometheus</span>
-            <a href="./gaja.html">포트폴리오 보기</a>
+            <span class="project-links">
+              <a href="./gaja.html">포트폴리오 보기</a>
+              <a href="https://github.com/BIKE-PROJECT-MINJI/bike-back" target="_blank" rel="noopener noreferrer">코드 보기</a>
+            </span>
           </div>
         </article>
 
         <article class="vertical-project">
           <div class="project-topline">
             <span>02</span>
-            <span>팀 프로젝트 · 팀장</span>
+            <span>팀 프로젝트</span>
           </div>
           <h3>숏터디</h3>
           <p class="project-desc">짧은 학습 영상을 업로드하고 소비하는 숏폼 학습 플랫폼으로, 팀 프로젝트에서 백엔드와 운영 구조를 맡았습니다.</p>
           <ul>
             <li>S3 Presigned URL 기반 Direct Upload와 업로드 세션 관리</li>
-            <li>게시 상태와 업로드 상태 분리, Projection 읽기 모델 구성</li>
-            <li>Redis Write-back 조회수 집계와 BackOffice 운영 지표 API 구현</li>
+            <li>업로드 파이프라인 상태와 숏츠 게시 상태 분리</li>
+            <li>Redis Write-back 조회수 집계와 BackOffice 비즈니스 지표 API 구현</li>
           </ul>
           <div class="project-bottom">
             <span>S3 · Redis · BackOffice</span>
-            <a href="./shortudy.html">포트폴리오 보기</a>
+            <span class="project-links">
+              <a href="./shortudy.html">포트폴리오 보기</a>
+              <a href="https://github.com/minji0828/wantbehelp-3rd-LXP/tree/refactor/shorts" target="_blank" rel="noopener noreferrer">코드 보기</a>
+            </span>
           </div>
         </article>
 
@@ -121,11 +127,14 @@
           <ul>
             <li>자료 업로드 → 문제 생성 → 풀이/채점 → 결과 확인 흐름 구성</li>
             <li>schoolId 기반 논리적 스코프와 교사/학생/운영자 역할 분리</li>
-            <li>자료 범위 안에서만 답하는 QA 흐름과 프롬프트 기준 정리</li>
+            <li>자료 범위 기반 QA 응답과 근거 부족 시 fallback 흐름 구성</li>
           </ul>
           <div class="project-bottom">
             <span>RBAC · AI Guardrail · Prompt</span>
-            <a href="./ai-study.html">포트폴리오 보기</a>
+            <span class="project-links">
+              <a href="./ai-study.html">포트폴리오 보기</a>
+              <a href="https://github.com/MINJI-AI-STUDY/AI-BACK" target="_blank" rel="noopener noreferrer">코드 보기</a>
+            </span>
           </div>
         </article>
       </div>

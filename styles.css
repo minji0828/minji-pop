@@ -2096,6 +2096,13 @@ img {
   text-underline-offset: 4px;
 }
 
+.vertical-page .project-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 14px;
+}
+
 .vertical-page .simple-footer {
   padding: 54px 0 42px;
   border-top: 1px solid var(--simple-line);
