@@ -28,15 +28,11 @@ sections.forEach((section) => {
 const toggleCards = document.querySelectorAll("[data-toggle-card]");
 
 function getCollapsedLabel(targetId) {
-  if (targetId === "gaja-detail") return "GAJA 흐름과 판단 보기";
-  if (targetId === "shortudy-detail") return "숏터디 업로드/조회 흐름 보기";
-  return "AI-STUDY 역할과 스코프 보기";
+  return "포트폴리오 보기";
 }
 
 function getExpandedLabel(targetId) {
-  if (targetId === "gaja-detail") return "GAJA 흐름과 판단 접기";
-  if (targetId === "shortudy-detail") return "숏터디 업로드/조회 흐름 접기";
-  return "AI-STUDY 역할과 스코프 접기";
+  return "포트폴리오 접기";
 }
 
 toggleCards.forEach((card) => {
