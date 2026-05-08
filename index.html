@@ -3,131 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>지민수 | Backend Developer</title>
+  <title>지민수 — Backend Developer</title>
   <meta name="description" content="지민수의 백엔드 개발 포트폴리오. Spring Boot 기반 위치 기반 서비스, 숏폼 플랫폼, AI 학습 보조 도구의 백엔드를 설계하고 운영했습니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <nav class="site-nav" aria-label="메인 네비게이션">
     <div class="container">
-      <div class="header-main">
-        <div>
-          <h1>지민수</h1>
-          <p class="header-role">Backend Developer</p>
-        </div>
-        <nav class="header-links">
-          <a href="mailto:entersuk1998@naver.com">Email</a>
-          <a href="https://github.com/minji0828" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </nav>
+      <a href="/" class="site-name">지민수</a>
+      <div class="nav-links">
+        <a href="#strengths">강점</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#contact">연락처</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <p class="hero-role">Backend Developer</p>
+      <h1 class="hero-title">지민수</h1>
+      <p class="hero-positioning">조회 성능과 상태 흐름을 설계합니다</p>
+      <div class="hero-links">
+        <a href="mailto:entersuk1998@naver.com">entersuk1998@naver.com</a>
+        <a href="https://github.com/minji0828" target="_blank" rel="noopener noreferrer">github.com/minji0828</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section about" id="about">
+    <section id="strengths" class="section" aria-labelledby="strengths-heading">
       <div class="container">
-        <p class="about-lead">
-          조회 성능과 상태 흐름을 설계하는 백엔드 개발자입니다. Spring Boot 기반으로 위치 기반 서비스, 숏폼 플랫폼, AI 학습 보조 도구의 백엔드를 설계하고 운영했습니다. 전체 흐름을 먼저 파악한 뒤 필요한 지점을 깊게 다루는 것을 선호합니다.
-        </p>
-        <div class="about-tags">
-          <span>도메인 분석</span>
-          <span>실시간성</span>
-          <span>상태 흐름</span>
-          <span>운영 기준</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section competencies" id="competencies">
-      <div class="container">
-        <h2 class="section-title">주요 역량</h2>
-        <div class="competency-list">
-          <article class="competency-item">
+        <h2 class="section-title" id="strengths-heading">주요 강점</h2>
+        <div class="strength-list">
+          <article class="strength-item">
             <h3>조회 성능 최적화</h3>
-            <p>Projection 기반 읽기 경로 분리, Redis Write-back 집계, N+1 완화를 통해 복잡한 조회 로직의 응답 시간과 부하를 개선했습니다.</p>
+            <p>Projection 기반 읽기 경로 분리, Redis Write-back 집계, N+1 완화로 복잡한 조회의 응답 시간과 부하를 개선합니다.</p>
           </article>
-          <article class="competency-item">
-            <h3>인증 및 보안 흐름</h3>
-            <p>Presigned URL 기반 S3 Direct Upload 설계, 세션 관리, 상태 전이 제어로 보안과 비용 효율을 동시에 확보했습니다.</p>
+          <article class="strength-item">
+            <h3>상태 흐름 제어</h3>
+            <p>인증 세션 관리, 업로드 파이프라인 설계, 삭제 순서 제어로 데이터 무결성과 보안 흐름을 동시에 확보합니다.</p>
           </article>
-          <article class="competency-item">
-            <h3>데이터 무결성</h3>
-            <p>FK 충돌 방지를 위한 삭제 순서 제어, 업로드 세션 정리, Soft/Hard Delete 기준을 명확히 분리하여 데이터 일관성을 유지했습니다.</p>
-          </article>
-          <article class="competency-item">
-            <h3>운영 관측성</h3>
-            <p>BackOffice API에서 KST 기준, 분모/분자 산출 기준, 반올림 규칙을 명시하여 운영 지표의 계산 표준을 서버가 강제하도록 구현했습니다.</p>
+          <article class="strength-item">
+            <h3>운영 지표 설계</h3>
+            <p>BackOffice API에서 KST 기준, 분모/분자 산출 기준, 반올림 규칙을 명시하여 서버가 계산 표준을 강제합니다.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section tech" id="tech">
+    <section id="projects" class="section" aria-labelledby="projects-heading">
       <div class="container">
-        <h2 class="section-title">기술 스택</h2>
-        <ul class="tech-list">
-          <li>Java</li>
-          <li>Spring Boot</li>
-          <li>JPA</li>
-          <li>MySQL</li>
-          <li>Redis</li>
-          <li>Docker</li>
-          <li>AWS EC2</li>
-          <li>AWS S3</li>
-          <li>AWS RDS</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section projects" id="projects">
-      <div class="container">
-        <h2 class="section-title">프로젝트</h2>
+        <h2 class="section-title" id="projects-heading">프로젝트</h2>
         <div class="project-list">
+
           <article class="project-card">
-            <div class="project-meta">
-              <h3>GAJA</h3>
-              <span class="project-type">개인 프로젝트</span>
+            <div class="project-main">
+              <div class="project-header">
+                <h3>GAJA</h3>
+                <span class="project-type">개인 프로젝트</span>
+              </div>
+              <p class="project-summary">자전거 여행 위치 기반 HUD 서비스</p>
+              <p class="project-value">GPS 수집 파이프라인과 JWT 인증·외부 API 장애 대응을 설계</p>
             </div>
-            <p class="project-desc">자전거 여행 중 경로, 날씨, 주행 상태를 한 화면에서 확인할 수 있는 위치 기반 HUD 서비스.</p>
-            <div class="project-tags">
-              <span>위치 기반</span>
-              <span>인증</span>
-              <span>운영</span>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>위치 기반</span>
+                <span>인증</span>
+                <span>실시간 데이터</span>
+              </div>
+              <a class="project-link" href="./gaja.html">상세 보기</a>
             </div>
-            <a class="project-link" href="./gaja.html">상세 보기</a>
           </article>
 
           <article class="project-card">
-            <div class="project-meta">
-              <h3>숏터디</h3>
-              <span class="project-type">팀 프로젝트 / 팀장</span>
+            <div class="project-main">
+              <div class="project-header">
+                <h3>숏터디</h3>
+                <span class="project-type">팀 프로젝트 / 팀장</span>
+              </div>
+              <p class="project-summary">숏폼 학습 콘텐츠 플랫폼</p>
+              <p class="project-value">S3 Direct Upload, Redis Write-back 집계, 조회 최적화, 인프라 분리</p>
             </div>
-            <p class="project-desc">짧은 학습 영상을 업로드하고 탐색할 수 있는 숏폼 학습 플랫폼. S3 Direct Upload, Redis Write-back 집계, Projection 조회 최적화, BackOffice API, EC2/RDS 인프라 분리를 담당했습니다.</p>
-            <div class="project-tags">
-              <span>업로드</span>
-              <span>조회</span>
-              <span>Redis</span>
-              <span>운영 지표</span>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>업로드</span>
+                <span>조회</span>
+                <span>Redis</span>
+                <span>운영 지표</span>
+              </div>
+              <a class="project-link" href="./shortudy.html">상세 보기</a>
             </div>
-            <a class="project-link" href="./shortudy.html">상세 보기</a>
           </article>
 
           <article class="project-card">
-            <div class="project-meta">
-              <h3>AI-STUDY</h3>
-              <span class="project-type">개인 프로젝트</span>
+            <div class="project-main">
+              <div class="project-header">
+                <h3>AI-STUDY</h3>
+                <span class="project-type">개인 프로젝트</span>
+              </div>
+              <p class="project-summary">수업 자료 기반 AI 학습 보조 서비스</p>
+              <p class="project-value">역할 기반 접근 제어, AI 응답 제한, 프롬프트 최적화 및 비용 통제 설계</p>
             </div>
-            <p class="project-desc">수업 자료를 바탕으로 문제 생성, 학습, 질의응답을 연결한 AI 학습 보조 서비스.</p>
-            <div class="project-tags">
-              <span>학교 스코프</span>
-              <span>역할 분리</span>
-              <span>QA 제한</span>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span>학교 스코프</span>
+                <span>역할 분리</span>
+                <span>AI 제한</span>
+              </div>
+              <a class="project-link" href="./ai-study.html">상세 보기</a>
             </div>
-            <a class="project-link" href="./ai-study.html">상세 보기</a>
           </article>
+
         </div>
       </div>
     </section>
@@ -135,13 +126,24 @@
 
   <footer class="site-footer" id="contact">
     <div class="container">
-      <p class="footer-copy">지민수 &mdash; Backend Developer</p>
-      <div class="footer-links">
-        <a href="mailto:entersuk1998@naver.com">entersuk1998@naver.com</a>
-        <a href="https://github.com/minji0828" target="_blank" rel="noopener noreferrer">github.com/minji0828</a>
+      <h2 class="section-title">연락처</h2>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:entersuk1998@naver.com">entersuk1998@naver.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/minji0828" target="_blank" rel="noopener noreferrer">github.com/minji0828</a>
+        </div>
       </div>
+      <p class="footer-copy">&copy; 2025 지민수</p>
     </div>
   </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="맨 위로 이동">
+    <span aria-hidden="true">&#8593;</span>
+  </button>
 
   <script src="script.js"></script>
 </body>
